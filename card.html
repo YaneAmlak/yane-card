@@ -8,8 +8,8 @@
 <meta name="theme-color" content="#0f766e">
 <title>کارت ملک</title>
 <style>
-@font-face { font-family: 'Vazirmatn'; src: url('vendor/fonts/Vazirmatn-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
-@font-face { font-family: 'Vazirmatn'; src: url('vendor/fonts/Vazirmatn-Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Vazirmatn'; src: url('Vazirmatn-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Vazirmatn'; src: url('Vazirmatn-Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body { margin: 0; background: #f1f4f8; color: #0f172a; font: 400 14px/1.7 'Vazirmatn', Tahoma, sans-serif; }
@@ -86,12 +86,12 @@ body { margin: 0; background: #f1f4f8; color: #0f172a; font: 400 14px/1.7 'Vazir
     </div></div>
   </div>
 </div>
-<script src="js/config.js"></script>
-<script src="js/utils.js"></script>
-<script src="js/clients-core.js"></script>
-<script src="js/listings-core.js"></script>
-<script src="js/cards-core.js"></script>
-<script src="js/card-page.js"></script>
+<script src="config.js"></script>
+<script src="utils.js"></script>
+<script src="clients-core.js"></script>
+<script src="listings-core.js"></script>
+<script src="cards-core.js"></script>
+<script src="card-page.js"></script>
 <script>
   CardPage.run({
     doc: document, fetch: window.fetch.bind(window), config: window.APP_CONFIG, search: location.search,
