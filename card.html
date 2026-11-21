@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0f766e">
+<title>کارت ملک</title>
+<style>
+@font-face { font-family: 'Vazirmatn'; src: url('vendor/fonts/Vazirmatn-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Vazirmatn'; src: url('vendor/fonts/Vazirmatn-Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { margin: 0; background: #f1f4f8; color: #0f172a; font: 400 14px/1.7 'Vazirmatn', Tahoma, sans-serif; }
+.cp-wrap { max-width: 520px; margin: 0 auto; min-height: 100vh; position: relative; }
+.cp-hero { position: relative; min-height: 170px; background: linear-gradient(155deg, #0f766e 0%, #1e5a9c 100%); color: #fff; overflow: hidden; padding: calc(14px + env(safe-area-inset-top)) 16px 54px; display: flex; flex-direction: column; justify-content: space-between; }
+.cp-sky { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 80px; opacity: .6; }
+.cp-top { position: relative; display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; letter-spacing: 0; }
+.cp-badge { margin-inline-start: auto; background: rgba(255,255,255,.22); border-radius: 999px; padding: 2px 12px; font-size: 12px; letter-spacing: 0; }
+.cp-kicker { position: relative; font-size: 12px; opacity: .9; margin-top: 22px; }
+.cp-head { position: relative; margin: 0; font-weight: 700; font-size: 21px; line-height: 1.5; }
+.cp-body { position: relative; margin: -28px 12px 0; padding-bottom: 130px; display: flex; flex-direction: column; gap: 10px; }
+.cp-box { background: #fff; border-radius: 16px; padding: 12px 14px; box-shadow: 0 8px 24px -14px rgba(15,23,42,.25); }
+.cp-label { color: #5b6472; font-size: 12px; }
+.cp-prices { display: flex; gap: 12px; }
+.cp-price { flex: 1; }
+.cp-price b { display: block; font-size: 19px; line-height: 1.4; color: #0f766e; font-weight: 700; }
+.cp-facts { display: flex; gap: 10px; }
+.cp-tile { flex: 1; background: #fff; border-radius: 14px; padding: 9px 4px; text-align: center; box-shadow: 0 8px 24px -14px rgba(15,23,42,.25); }
+.cp-tile b { display: block; font-size: 15px; line-height: 1.5; font-weight: 700; }
+.cp-tile span { font-size: 11.5px; color: #5b6472; }
+.cp-feat { display: flex; align-items: center; gap: 10px; }
+.cp-tick { width: 28px; height: 28px; border-radius: 50%; background: #dcfce7; color: #166534; display: flex; align-items: center; justify-content: center; flex: none; }
+.cp-adv { display: flex; align-items: center; gap: 12px; }
+.cp-avatar { width: 42px; height: 42px; border-radius: 50%; background: #e0e7ff; color: #4338ca; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 17px; flex: none; }
+.cp-call { width: 42px; height: 42px; border-radius: 50%; background: #0f766e; color: #fff; display: flex; align-items: center; justify-content: center; text-decoration: none; flex: none; }
+.cp-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 48px; border-radius: 14px; border: 0; font: 700 15px 'Vazirmatn', Tahoma, sans-serif; text-decoration: none; cursor: pointer; }
+.cp-primary { background: linear-gradient(160deg, #0f766e, #0d6b8a); color: #fff; box-shadow: 0 14px 28px -12px rgba(15,118,110,.75); }
+.cp-primary:disabled { opacity: .6; }
+.cp-visitor { display: none; flex-direction: column; gap: 8px; margin-bottom: 10px; }
+.cp-visitor input { width: 100%; box-sizing: border-box; padding: 12px; border: 1px solid #cbd5e1; border-radius: 12px; font-size: 16px; font-family: inherit; }
+.cp-err { color: #b91c1c; font-size: 13px; min-height: 1em; }
+.cp-ghost { background: #d9f5ee; color: #0f766e; margin-top: 10px; }
+.cp-warn { background: #fef3c7; color: #92400e; border-radius: 16px; padding: 12px 14px; }
+.cp-after { text-align: center; }
+.cp-after.ok { border: 2px solid #16a34a; }
+.cp-after.ok::before { content: '✓'; display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; margin: 0 auto 8px; border-radius: 50%; background: #dcfce7; color: #166534; font-size: 30px; font-weight: 700; }
+#cp-after-msg { font-weight: 700; font-size: 14px; line-height: 1.9; }
+.cp-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: #fff; border-top: 1px solid #e5e9f0; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); }
+.cp-bar-in { max-width: 520px; margin: 0 auto; }
+.cp-how { padding: 11px 14px; }
+.cp-how b { display: block; font-size: 13px; margin-bottom: 4px; }
+.cp-how ol { margin: 0; padding: 0 18px 0 0; font-size: 12.5px; line-height: 1.9; color: #334155; }
+.cp-foot { color: #5b6472; font-size: 11px; text-align: center; margin-top: 8px; line-height: 1.8; }
+#cp-state { text-align: center; padding: 60px 16px; color: #5b6472; }
+</style>
+</head>
+<body>
+<div class="cp-wrap">
+  <div id="cp-state">در حال بارگذاری…</div>
+  <div id="cp-card" style="display:none">
+    <header class="cp-hero"><svg class="cp-sky" viewBox="0 0 390 110" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><g fill="#fff" fill-opacity=".12"><rect x="10" y="50" width="42" height="60"/><rect x="58" y="28" width="36" height="82"/><rect x="100" y="62" width="48" height="48"/><rect x="154" y="18" width="40" height="92"/><rect x="200" y="54" width="34" height="56"/><rect x="240" y="34" width="44" height="76"/><rect x="290" y="64" width="38" height="46"/><rect x="334" y="40" width="46" height="70"/></g><g fill="#fff" fill-opacity=".22"><rect x="66" y="40" width="6" height="6"/><rect x="78" y="40" width="6" height="6"/><rect x="164" y="30" width="6" height="6"/><rect x="176" y="30" width="6" height="6"/><rect x="250" y="46" width="6" height="6"/><rect x="262" y="46" width="6" height="6"/><rect x="344" y="52" width="6" height="6"/></g></svg>
+      <div class="cp-top"><svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="7" fill="#fff"/><path d="M50 19 L83 46 V80 H17 V46 Z" fill="#0f766e" stroke="#0f766e" stroke-width="6" stroke-linejoin="round"/><path d="M37 47 L50 60 L63 47 M50 60 V75" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="cp-agency">Yane</span><span class="cp-badge" id="cp-badge"></span></div>
+      <div><div class="cp-kicker">ملک پیشنهادی مشاور</div><h1 class="cp-head" id="cp-title"></h1></div>
+    </header>
+    <main class="cp-body">
+      <div id="cp-closed" class="cp-warn" style="display:none">این ملک دیگر موجود نیست. برای ملک‌های مشابه با مشاور تماس بگیرید.</div>
+      <div id="cp-after" class="cp-box cp-after" style="display:none">
+        <div id="cp-after-msg"></div>
+        <a id="cp-tel2" class="cp-btn cp-ghost" href="#" style="display:none"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>تماس با مشاور</a>
+        <a id="cp-wa" class="cp-btn cp-ghost" href="#" style="display:none" target="_blank" rel="noopener">پیام در واتساپ</a>
+      </div>
+      <div class="cp-box"><div id="cp-prices" class="cp-prices"></div></div>
+      <div id="cp-facts" class="cp-facts"></div>
+      <div class="cp-box cp-feat" id="cp-features-box" style="display:none"><span class="cp-tick"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></span><div><div class="cp-label">ویژگی‌ها</div><div id="cp-features" style="font-weight:700"></div></div></div>
+      <div class="cp-box cp-how"><b>مراحل ادامه</b><ol><li>خواهشمندیم مشخصات ملک را بررسی فرمایید.</li><li>در صورت تمایل، با انتخاب «درخواست بازدید از این ملک»، نام و شماره‌ی تماس خود را ثبت نمایید.</li><li>مشاور برای هماهنگی زمان بازدید، با شما تماس خواهد گرفت.</li></ol></div>
+      <div class="cp-box" id="cp-note-box" style="display:none"><div class="cp-label">پیام مشاور</div><div id="cp-note"></div></div>
+      <div class="cp-box cp-adv"><span class="cp-avatar" id="cp-avatar"></span><div style="flex:1"><div class="cp-label" id="cp-adv-label">مشاور املاک</div><div id="cp-contact-name" style="font-weight:700;font-size:15px"></div></div>
+        <a id="cp-tel" class="cp-call" href="#" aria-label="تماس با مشاور" style="display:none"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></a></div>
+    </main>
+    <div class="cp-bar"><div class="cp-bar-in">
+      <div id="cp-visitor" class="cp-visitor"><input id="cp-v-name" type="text" placeholder="نام و نام خانوادگی" autocomplete="name" maxlength="60"><input id="cp-v-phone" type="tel" inputmode="tel" placeholder="شماره‌ی تماس (مثلاً ۰۹۱۲…)" autocomplete="tel" maxlength="20"><div id="cp-v-err" class="cp-err"></div></div>
+      <button type="button" id="cp-want" class="cp-btn cp-primary">درخواست بازدید از این ملک</button>
+      <div class="cp-foot">نشانی دقیق ملک، پس از هماهنگی بازدید توسط مشاور اعلام می‌شود.</div>
+    </div></div>
+  </div>
+</div>
+<script src="js/config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/clients-core.js"></script>
+<script src="js/listings-core.js"></script>
+<script src="js/cards-core.js"></script>
+<script src="js/card-page.js"></script>
+<script>
+  CardPage.run({
+    doc: document, fetch: window.fetch.bind(window), config: window.APP_CONFIG, search: location.search,
+    storage: window.sessionStorage, random: Math.random, now: Date.now,
+    setInterval: window.setInterval.bind(window),
+    onVisibility: function (cb) {
+      document.addEventListener('visibilitychange', function () { cb(document.hidden); });
+      window.addEventListener('pagehide', function () { cb(true); });
+    }
+  });
+</script>
+</body>
+</html>
